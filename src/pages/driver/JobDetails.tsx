@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import DashboardLayout from '@/components/layouts/DashboardLayout'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Textarea } from '@/components/ui/textarea'
@@ -12,10 +12,7 @@ import {
   Calendar,
   Clock,
   Loader2,
-  CheckCircle,
-  XCircle,
   AlertCircle,
-  Image as ImageIcon,
 } from 'lucide-react'
 import {
   useDriverJob,

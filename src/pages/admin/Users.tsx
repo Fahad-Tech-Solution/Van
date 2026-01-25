@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge'
-import { Users, Search, Loader2, Edit, Trash2 } from 'lucide-react'
+import { Search, Loader2, Edit, Trash2 } from 'lucide-react'
 import { useAdminUsers, useUpdateUser, useDeleteUser } from '@/hooks/useAdmin'
 import {
   Dialog,

@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from 'react-query'
-import { adminApi, AdminStats, User, Booking } from '@/api/admin'
+import { adminApi, User, Booking } from '@/api/admin'
 
 // Stats
 export const useAdminStats = () => {

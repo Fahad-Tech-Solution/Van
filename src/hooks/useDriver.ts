@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from 'react-query'
-import { driverApi, DriverStats, VehicleInfo } from '@/api/driver'
+import { driverApi, VehicleInfo } from '@/api/driver'
 
 // Stats
 export const useDriverStats = () => {

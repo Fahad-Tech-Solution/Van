@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge'
-import { FileText, Search, Loader2, Edit, Truck, Mail, AlertCircle } from 'lucide-react'
+import { Search, Loader2, Edit, Truck, Mail, AlertCircle } from 'lucide-react'
 import { useAdminBookings, useUpdateBookingAdmin, useAssignDriver, useAdminDrivers, useHandleDispute, useSendEmailReminder } from '@/hooks/useAdmin'
 import {
   Dialog,
@@ -22,7 +22,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { Link } from 'react-router-dom'
 
 const BookingsPage = () => {
   const [page, setPage] = useState(1)

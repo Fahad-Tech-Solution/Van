@@ -12,9 +12,11 @@ export interface AdminStats {
     confirmed: number
     inProgress: number
     completed: number
+    disputed: number
   }
   revenue: {
     total: number
+    totalSpent: number
   }
 }
 
@@ -33,7 +35,7 @@ export interface Booking {
   _id: string
   customer: User | string
   driver?: User | string
-  status: 'pending' | 'confirmed' | 'in-progress' | 'completed' | 'cancelled'
+  status: 'pending' | 'confirmed' | 'in-progress' | 'completed' | 'cancelled' | 'disputed'
   pickupAddress: string
   pickupCity: string
   pickupState?: string
@@ -51,6 +53,13 @@ export interface Booking {
   paymentStatus: 'pending' | 'paid' | 'refunded'
   amountPaid?: number
   orderCode?: string
+  contactEmail?: string
+  contactPhone?: string
+  completionPictures?: string[]
+  driverNotes?: string
+  isDisputed?: boolean
+  disputeReason?: string
+  disputeResolved?: boolean
   createdAt: string
   updatedAt: string
 }

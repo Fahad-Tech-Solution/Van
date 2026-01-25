@@ -20,9 +20,12 @@ import Settings from './pages/Settings'
 const queryClient = new QueryClient()
 
 function App() {
+  // Get base path from environment variable (for GitHub Pages)
+  const basePath = import.meta.env.VITE_BASE_PATH || '/'
+  
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      <BrowserRouter basename={basePath}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
