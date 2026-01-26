@@ -1,6 +1,5 @@
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
-
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
@@ -21,29 +20,27 @@ import Settings from './pages/Settings'
 const queryClient = new QueryClient()
 
 function App() {
+  // Get base path from environment variable (for GitHub Pages)
+  const basePath = import.meta.env.VITE_BASE_PATH || '/'
+
+  
   return (
     <QueryClientProvider client={queryClient}>
-      <HashRouter>
+      <HashRouter basename={basePath}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
-          {/* Admin */}
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/users" element={<AdminUsers />} />
           <Route path="/admin/bookings" element={<AdminBookings />} />
           <Route path="/admin/drivers" element={<AdminDrivers />} />
           <Route path="/admin/settings" element={<Settings />} />
-
-          {/* Customer */}
           <Route path="/customer" element={<CustomerDashboard />} />
           <Route path="/customer/book" element={<BookService />} />
           <Route path="/customer/bookings" element={<MyBookings />} />
           <Route path="/customer/bookings/:id" element={<BookingDetails />} />
           <Route path="/customer/settings" element={<Settings />} />
-
-          {/* Driver */}
           <Route path="/driver" element={<DriverDashboard />} />
           <Route path="/driver/jobs" element={<DriverJobs />} />
           <Route path="/driver/jobs/:id" element={<DriverJobDetails />} />
@@ -56,3 +53,4 @@ function App() {
 }
 
 export default App
+
