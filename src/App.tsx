@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom'
+import { Routes, Route, HashRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import Home from './pages/Home'
 import Login from './pages/Login'
