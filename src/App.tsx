@@ -1,4 +1,4 @@
-import { Routes, Route, HashRouter } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import Home from './pages/Home'
 import Login from './pages/Login'
@@ -20,13 +20,10 @@ import Settings from './pages/Settings'
 const queryClient = new QueryClient()
 
 function App() {
-  // Get base path from environment variable (for GitHub Pages)
-  const basePath = import.meta.env.VITE_BASE_PATH || '/'
-
-  
+  // Vercel handles routing automatically, no basename needed
   return (
     <QueryClientProvider client={queryClient}>
-      <HashRouter basename={basePath}>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -47,7 +44,7 @@ function App() {
           <Route path="/driver/vehicle" element={<DriverVehicle />} />
           <Route path="/driver/settings" element={<Settings />} />
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </QueryClientProvider>
   )
 }
